@@ -91,6 +91,7 @@ set number
 set hlsearch
 
 " search case insensitive if term is all lowercase "
+set ignorecase
 set smartcase
 
 " Highlight column 81 to help keep lines of code 80 characters or less "
@@ -128,4 +129,7 @@ set backspace=indent,eol,start
 
 " Enable Ctrl+P "
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" F2 toggles paste mode one and off "
+set pastetoggle=<F2>
 EOM
