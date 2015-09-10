@@ -132,4 +132,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " F2 toggles paste mode one and off "
 set pastetoggle=<F2>
+
+" <Ctrl-l> redraws the screen and removes any search highlighting. "
+nnoremap <silent> <C-l> :nohl<CR><C-l>
 EOM
