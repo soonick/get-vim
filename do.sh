@@ -130,6 +130,12 @@ set backspace=indent,eol,start
 " Enable Ctrl+P "
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+" Ctrl+P to open selection in new tab by default "
+let g:ctrlp_prompt_mappings = {
+  \ 'AcceptSelection("e")': [],
+  \ 'AcceptSelection("t")': ['<cr>', '<c-m>'],
+  \ }
+
 " F2 toggles paste mode one and off "
 set pastetoggle=<F2>
 
