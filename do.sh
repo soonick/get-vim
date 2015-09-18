@@ -144,4 +144,7 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 " Use ESLint for JS files "
 let g:syntastic_javascript_checkers = ['eslint']
+
+" Don't index node_modules and bower_components folders "
+set wildignore+=**/node_modules,**/bower_components
 EOM
