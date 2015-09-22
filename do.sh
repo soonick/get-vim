@@ -75,6 +75,7 @@ set nowb
 
 " Replace tabs with spaces "
 set expandtab
+set smarttab
 
 " Make tabs 2 spaces wide "
 set tabstop=2
@@ -147,4 +148,18 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 " Don't index node_modules and bower_components folders "
 set wildignore+=**/node_modules,**/bower_components
+
+" Enable .vimrc files per project "
+set exrc
+set secure
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+" Treat long lines as break lines (useful when moving around in them)
+map j gj
+map k gk
 EOM
