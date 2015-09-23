@@ -153,13 +153,19 @@ set wildignore+=**/node_modules,**/bower_components
 set exrc
 set secure
 
-" No annoying sound on errors
+" No annoying sound on errors "
 set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
 
-" Treat long lines as break lines (useful when moving around in them)
+" Treat long lines as break lines (useful when moving around in them) "
 map j gj
 map k gk
+
+" Disallow use of arrow keys to move. Use hjkl instead "
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
 EOM
