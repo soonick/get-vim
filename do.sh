@@ -15,6 +15,8 @@ fi
 git clone https://github.com/vim/vim.git $location
 cd "$location/src"
 
+./configure --enable-pythoninterp
+
 # Build and install
 if ! make; then
   echo ""
