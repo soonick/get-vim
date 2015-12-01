@@ -170,4 +170,7 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+
+" Set the nerdtree width to 20 characters "
+let g:NERDTreeWinSize = 20
 EOM
