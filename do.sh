@@ -173,4 +173,8 @@ map <right> <nop>
 
 " Set the nerdtree width to 20 characters "
 let g:NERDTreeWinSize = 20
+
+" Highlight current line "
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40 ctermbg=darkgrey
 EOM
