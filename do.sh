@@ -176,5 +176,8 @@ let g:NERDTreeWinSize = 20
 
 " Highlight current line "
 set cursorline
-hi CursorLine term=bold cterm=bold guibg=Grey40 ctermbg=darkgrey
+hi CursorLine term=bold cterm=bold guibg=Grey40 ctermbg=235
+
+" Fixes slow scrolling on mac "
+set lazyredraw
 EOM
