@@ -180,4 +180,7 @@ hi CursorLine term=bold cterm=bold guibg=Grey40 ctermbg=235
 
 " Fixes slow scrolling on mac "
 set lazyredraw
+
+" Make y(y) and paste(p) operations use the system clipboard
+set clipboard=unnamed,unnamedplus
 EOM
