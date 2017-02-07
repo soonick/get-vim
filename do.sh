@@ -53,8 +53,8 @@ git clone https://github.com/scrooloose/syntastic.git
 cd ~/.vim/bundle
 git clone https://github.com/fatih/vim-go.git
 
-cd ~/.vim
-git clone https://github.com/kien/ctrlp.vim.git bundle/ctrlp.vim
+cd ~/.vim/bundle
+git clone https://github.com/ctrlpvim/ctrlp.vim.git
 
 
 # Create .vimrc file
@@ -135,6 +135,9 @@ set backspace=indent,eol,start
 
 " Enable Ctrl+P "
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" No limit on how many files ctrlp should index "
+let g:ctrlp_max_files=0
 
 " Ctrl+P to open selection in new tab by default "
 let g:ctrlp_prompt_mappings = {
