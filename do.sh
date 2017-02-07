@@ -50,6 +50,9 @@ git clone https://github.com/scrooloose/nerdcommenter.git
 cd ~/.vim/bundle
 git clone https://github.com/scrooloose/syntastic.git
 
+cd ~/.vim/bundle
+git clone https://github.com/fatih/vim-go.git
+
 cd ~/.vim
 git clone https://github.com/kien/ctrlp.vim.git bundle/ctrlp.vim
 
