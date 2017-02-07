@@ -186,4 +186,7 @@ set lazyredraw
 
 " Make y(y) and paste(p) operations use the system clipboard
 set clipboard=unnamed,unnamedplus
+
+" <leader>dt will open definition of function under cursor in new tab (vim-go) "
+au FileType go nmap <leader>dt <Plug>(go-def-tab)
 EOM
