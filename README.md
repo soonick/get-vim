@@ -8,7 +8,7 @@ To install dependencies in Fedora:
 sudo dnf install ncurses-devel
 ```
 
-Use this script to download, compile and configure Vim with just one command:
+To download, compile and configure Vim:
 
 ```
 ./do.sh
