@@ -121,8 +121,14 @@ nmap <S-tab> <<
 " Allow the use of 256 colors in the terminal "
 set t_Co=256
 
-" Remove trailing spaces when saving a file "
-autocmd BufWritePre * :%s/\s\+$//e
+" Remove trailing spaces when saving a file (except for md files) "
+fun! StripTrailingWhiteSpace()
+  if &ft =~ 'markdown'
+    return
+  endif
+  %s/\s\+$//e
+endfun
+autocmd BufWritePre * :call StripTrailingWhiteSpace()
 
 " Start pathogen plugins "
 call pathogen#infect()
