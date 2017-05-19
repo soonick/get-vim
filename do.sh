@@ -151,6 +151,9 @@ let g:ctrlp_prompt_mappings = {
   \ 'AcceptSelection("t")': ['<cr>', '<c-m>'],
   \ }
 
+" Let Ctrl+P find hidden files "
+let g:ctrlp_show_hidden = 1
+
 " F2 toggles paste mode one and off "
 set pastetoggle=<F2>
 
