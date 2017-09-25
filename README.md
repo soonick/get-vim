@@ -8,6 +8,12 @@ To install dependencies in Fedora:
 sudo dnf install ncurses-devel
 ```
 
+To install dependencies in Ubuntu:
+
+```sh
+sudo apt-get install build-essential libncurses-dev
+```
+
 To download, compile and configure Vim:
 
 ```
