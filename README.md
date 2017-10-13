@@ -12,6 +12,7 @@ To install dependencies in Ubuntu:
 
 ```sh
 sudo apt-get install build-essential libncurses-dev
+sudo apt-get curl
 ```
 
 To download, compile and configure Vim:

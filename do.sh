@@ -28,34 +28,16 @@ fi
 
 sudo make install
 
-
 # Install plugins
-mkdir -p ~/.vim/autoload ~/.vim/bundle; \
-curl -Sso ~/.vim/autoload/pathogen.vim \
-    https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+mkdir -p ~/.vim/pack/my-plugins/start
 
-cd ~/.vim/bundle
+cd ~/.vim/pack/my-plugins/start
 git clone https://github.com/scrooloose/nerdtree.git
-
-cd ~/.vim/bundle
 git clone https://github.com/jistr/vim-nerdtree-tabs.git
-
-mkdir -p ~/.vim/plugin
-curl -Sso ~/.vim/plugin/grep.vim \
-    https://raw.githubusercontent.com/vim-scripts/grep.vim/master/plugin/grep.vim
-
-cd ~/.vim/bundle
-git clone https://github.com/scrooloose/nerdcommenter.git
-
-cd ~/.vim/bundle
 git clone https://github.com/scrooloose/syntastic.git
-
-cd ~/.vim/bundle
 git clone https://github.com/fatih/vim-go.git
-
-cd ~/.vim/bundle
 git clone https://github.com/ctrlpvim/ctrlp.vim.git
-
+mkdir -p grep/plugin && curl -Sso grep/plugin/grep.vim https://raw.githubusercontent.com/vim-scripts/grep.vim/master/plugin/grep.vim
 
 # Create .vimrc file
 mv ~/.vimrc ~/.vimrc.back
@@ -66,9 +48,6 @@ set encoding=utf-8
 
 " Automatic syntax highlight "
 syntax on
-
-" Necessary for NerdCommenter to work "
-filetype plugin on
 
 " Reload files modified outside of Vim "
 set autoread
@@ -129,9 +108,6 @@ fun! StripTrailingWhiteSpace()
   %s/\s\+$//e
 endfun
 autocmd BufWritePre * :call StripTrailingWhiteSpace()
-
-" Start pathogen plugins "
-call pathogen#infect()
 
 " Open nerdtree plugin when vim starts "
 let g:nerdtree_tabs_open_on_console_startup=1
