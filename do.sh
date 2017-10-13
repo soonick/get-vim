@@ -15,7 +15,11 @@ fi
 git clone https://github.com/vim/vim.git $location
 cd "$location/src"
 
-./configure --enable-pythoninterp
+./configure \
+    --enable-pythoninterp \
+    --enable-cscope \
+    --with-features=huge \
+    --with-x
 
 # Build and install
 if ! make; then
