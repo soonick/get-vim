@@ -69,6 +69,9 @@ set smarttab
 set tabstop=2
 set shiftwidth=2
 
+" For Golang use tabs "
+autocmd FileType go set noexpandtab
+
 " If I am in an indented block of code, keep the indentation level when I "
 " press enter "
 set autoindent
