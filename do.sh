@@ -88,6 +88,7 @@ set smartcase
 
 " Highlight column 81 to help keep lines of code 80 characters or less "
 set colorcolumn=81
+highlight ColorColumn ctermbg=8
 
 " Allows normal mode to autocomplete paths using tab like bash does "
 set wildmenu
