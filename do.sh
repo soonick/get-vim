@@ -148,6 +148,9 @@ set pastetoggle=<F2>
 " <Ctrl-l> redraws the screen and removes any search highlighting. "
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
+" <Ctrl-g> calls Rgrep "
+nnoremap <silent> <C-g> :Rgrep<CR>
+
 " Use ESLint for JS files "
 let g:syntastic_javascript_checkers = ['eslint']
 
