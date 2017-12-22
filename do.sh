@@ -90,6 +90,10 @@ set smartcase
 set colorcolumn=81
 highlight ColorColumn ctermbg=8
 
+" Allow the use of 256 colors in the terminal "
+set t_Co=256
+highlight Comment ctermfg=cyan
+
 " Allows normal mode to autocomplete paths using tab like bash does "
 set wildmenu
 set wildmode=list:longest
@@ -104,9 +108,6 @@ set switchbuf+=usetab,newtab
 " Shift+Tab unindents a line "
 imap <S-Tab> <Esc><<i
 nmap <S-tab> <<
-
-" Allow the use of 256 colors in the terminal "
-set t_Co=256
 
 " Remove trailing spaces when saving a file (except for md files) "
 fun! StripTrailingWhiteSpace()
