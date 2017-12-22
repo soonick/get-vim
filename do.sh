@@ -88,11 +88,14 @@ set smartcase
 
 " Highlight column 81 to help keep lines of code 80 characters or less "
 set colorcolumn=81
-highlight ColorColumn ctermbg=8
 
 " Allow the use of 256 colors in the terminal "
 set t_Co=256
-highlight Comment ctermfg=cyan
+
+" Set some theme colors "
+hi Directory guifg=#FF0000 ctermfg=68
+highlight Comment ctermfg=97
+highlight Search ctermfg=0 ctermbg=2
 
 " Allows normal mode to autocomplete paths using tab like bash does "
 set wildmenu
