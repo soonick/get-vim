@@ -72,6 +72,10 @@ set shiftwidth=2
 " For Golang use tabs "
 autocmd FileType go set noexpandtab
 
+" For python use 4 spaces "
+autocmd FileType python set tabstop=4
+autocmd FileType python set shiftwidth=4
+
 " If I am in an indented block of code, keep the indentation level when I "
 " press enter "
 set autoindent
