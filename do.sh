@@ -146,6 +146,9 @@ let g:ctrlp_prompt_mappings = {
 " Let Ctrl+P find hidden files "
 let g:ctrlp_show_hidden = 1
 
+" Use directory where vim was started as search directory "
+let g:ctrlp_working_path_mode = 'a'
+
 " F2 toggles paste mode one and off "
 set pastetoggle=<F2>
 
