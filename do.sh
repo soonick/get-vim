@@ -32,10 +32,18 @@ fi
 
 sudo make install
 
+# Install LanguageTool in the same folder as vim
+cd "$location"
+language_tool="LanguageTool-4.3"
+wget https://www.languagetool.org/download/${language_tool}.zip
+unzip ${language_tool}.zip
+rm ${language_tool}.zip
+
 # Install plugins
 mkdir -p ~/.vim/pack/my-plugins/start
 
 cd ~/.vim/pack/my-plugins/start
+git clone https://github.com/dpelle/vim-LanguageTool.git
 git clone https://github.com/scrooloose/nerdtree.git
 git clone https://github.com/jistr/vim-nerdtree-tabs.git
 git clone https://github.com/scrooloose/syntastic.git
@@ -47,6 +55,9 @@ mkdir -p grep/plugin && curl -Sso grep/plugin/grep.vim https://raw.githubusercon
 mv ~/.vimrc ~/.vimrc.back
 
 cat > ~/.vimrc << EOM
+" LanguageTool binary location for LanguageTool plugin "
+let g:languagetool_jar='${location}/${language_tool}/languagetool-commandline.jar'
+
 " I want my files to be utf-8 "
 set encoding=utf-8
 
