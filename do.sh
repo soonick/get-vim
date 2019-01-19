@@ -211,6 +211,28 @@ set clipboard=unnamed,unnamedplus
 " <leader>dt will open definition of function under cursor in new tab (vim-go) "
 au FileType go nmap <leader>dt <Plug>(go-def-tab)
 
+" Customize the statusline "
+set laststatus=2
+highlight StatuslineFilename ctermfg=Black ctermbg=DarkGreen
+highlight StatuslineModified ctermfg=DarkMagenta ctermbg=LightGreen
+highlight StatuslineNumbers ctermfg=Black ctermbg=DarkYellow
+set statusline=%#StatuslineFilename#   " Set color for file path
+set statusline+=%F                     " Full file path, at most 40 characters
+set statusline+=\                      " A space
+set statusline+=%#StatuslineModified#  " Set color for modified flag
+set statusline+=%m                     " Modified flag
+set statusline+=%#StatuslineFilename#  " Set color for the rest of the bar
+set statusline+=%=                     " Split the left and right sides
+set statusline+=%#StatuslineNumbers#   " Set color for line numbers
+set statusline+=%l,                    " Line number
+set statusline+=\                      " A space
+set statusline+=%-3c                    " Column number
+set statusline+=\ \|\                  " A separator
+set statusline+=%L                     " Total number of lines
+
+" Remove ugly Nerdtree statusline "
+let g:NERDTreeStatusline = '%#NonText#'
+
 " Rename tabs to show tab number.
 " (Based on http://stackoverflow.com/questions/5927952/whats-implementation-of-vims-default-tabline-function)
 if exists("+showtabline")
