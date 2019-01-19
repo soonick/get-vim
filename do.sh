@@ -49,7 +49,7 @@ git clone https://github.com/jistr/vim-nerdtree-tabs.git
 git clone https://github.com/scrooloose/syntastic.git
 git clone https://github.com/fatih/vim-go.git
 git clone https://github.com/ctrlpvim/ctrlp.vim.git
-mkdir -p grep/plugin && curl -Sso grep/plugin/grep.vim https://raw.githubusercontent.com/vim-scripts/grep.vim/master/plugin/grep.vim
+git clone https://github.com/soonick/grepfrut.git
 
 # Create .vimrc file
 mv ~/.vimrc ~/.vimrc.back
@@ -166,8 +166,9 @@ set pastetoggle=<F2>
 " <Ctrl-l> redraws the screen and removes any search highlighting. "
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
-" <Ctrl-g> calls Rgrep "
-nnoremap <silent> <C-g> :Rgrep<CR>
+" <Ctrl-g> calls Grepfrut. <C-R><C-W> pastes the word under the cursor in the "
+" command line. For more information `help c_<C-R>` and `help cmdline-special` "
+nnoremap <C-g> :Gf <C-R><C-W>
 
 " Use ESLint for JS files "
 let g:syntastic_javascript_checkers = ['eslint']
