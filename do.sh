@@ -170,6 +170,10 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 " command line. For more information `help c_<C-R>` and `help cmdline-special` "
 nnoremap <C-g> :Gf <C-R><C-W>
 
+" zx centers the cursor 30 lines below the top. I use this sometimes on "
+" vertical monitors "
+nnoremap zx zt30k30j
+
 " Use ESLint for JS files "
 let g:syntastic_javascript_checkers = ['eslint']
 
