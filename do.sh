@@ -76,9 +76,9 @@ set nowb
 set expandtab
 set smarttab
 
-" Make tabs 2 spaces wide "
-set tabstop=2
-set shiftwidth=2
+" Make tabs 2 spaces wide by default for all extensions "
+autocmd FileType * set tabstop=2
+autocmd FileType * set shiftwidth=2
 
 " For Golang use tabs "
 autocmd FileType go set noexpandtab
