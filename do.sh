@@ -1,36 +1,43 @@
 #!/bin/bash
 
-echo "Where do you want to install vim?"
-echo "If the directory doesn't exist, vim will be installed in the given directory"
-echo "If the directory exists a new folder will be created"
-read location
+echo "install vim"
 
-# Get it
-if [ ! -d "$location" ]; then
-  mkdir -p $location
-else
-  location="$location/vim"
-fi
+case "$OSTYPE" in
+  msys*)
+    choco install vim;;
+  *)
+    echo "Where do you want to install vim?"
+    echo "If the directory doesn't exist, vim will be installed in the given directory"
+    echo "If the directory exists a new folder will be created"
+    read location
 
-git clone https://github.com/vim/vim.git $location
-cd "$location/src"
+    # Get it
+    if [ ! -d "$location" ]; then
+      mkdir -p $location
+    else
+      location="$location/vim"
+    fi
 
-./configure \
-    --enable-pythoninterp \
-    --enable-cscope \
-    --with-features=huge \
-    --with-x
+    git clone https://github.com/vim/vim.git $location
+    cd "$location/src"
 
-# Build and install
-if ! make; then
-  echo ""
-  echo ""
-  echo "Couldn't compile vim. Make sure you have the necessary build tools"
-  echo ""
-  exit 1;
-fi
+    ./configure \
+        --enable-pythoninterp \
+        --enable-cscope \
+        --with-features=huge \
+        --with-x
 
-sudo make install
+    # Build and install
+    if ! make; then
+      echo ""
+      echo ""
+      echo "Couldn't compile vim. Make sure you have the necessary build tools"
+      echo ""
+      exit 1;
+    fi
+
+    sudo make install;
+esac
 
 # Install LanguageTool in the same folder as vim
 cd "$location"
@@ -203,6 +210,12 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+
+" Change move between windows on cmder "
+if has("wind64") || has("win32")
+  map <C-h> <C-W>h
+  map <C-l> <C-W>l
+endif
 
 " Set the nerdtree width to 20 characters "
 let g:NERDTreeWinSize = 20

@@ -19,3 +19,18 @@ To download, compile and configure Vim:
 ```
 ./do.sh
 ```
+
+# get-vim on Windows
+
+## Dependencies
+
+- [Cmdr](https://cmder.net/)
+- [Chocolatey](https://chocolatey.org/)
+
+To download, compile and configure Vim:
+
+```
+sh ./do-win.sh
+```
+
+**Note:** Run with administrator privilege as would with the sudo command.
