@@ -76,6 +76,10 @@ set nowb
 set expandtab
 set smarttab
 
+" Make tabs 2 spaces by default when vim is started "
+set tabstop=2
+set shiftwidth=2
+
 " Make tabs 2 spaces wide by default for all extensions "
 autocmd FileType * set tabstop=2
 autocmd FileType * set shiftwidth=2
