@@ -220,6 +220,9 @@ set clipboard=unnamed,unnamedplus
 " <leader>dt will open definition of function under cursor in new tab (vim-go) "
 au FileType go nmap <leader>dt <Plug>(go-def-tab)
 
+" <Ctrl-j> Pretty formats curent buffer as JSON "
+nnoremap  <C-j> :%!python -m json.tool<CR>
+
 " Customize the statusline "
 set laststatus=2
 highlight StatuslineFilename ctermfg=Black ctermbg=DarkGreen
