@@ -171,7 +171,7 @@ set pastetoggle=<F2>
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 " <Ctrl-g> calls Grepfrut. <C-R><C-W> pastes the word under the cursor in the "
-" command line. For more information `help c_<C-R>` and `help cmdline-special` "
+" command line. For more information 'help c_<C-R>' and 'help cmdline-special' "
 nnoremap <C-g> :Gf <C-R><C-W>
 
 " zx centers the cursor 30 lines below the top. I use this sometimes on "
