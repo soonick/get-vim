@@ -34,7 +34,7 @@ sudo make install
 
 # Install LanguageTool in the same folder as vim
 cd "$location"
-language_tool="LanguageTool-4.3"
+language_tool="LanguageTool-stable"
 wget https://www.languagetool.org/download/${language_tool}.zip
 unzip ${language_tool}.zip
 rm ${language_tool}.zip
