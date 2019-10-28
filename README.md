@@ -6,6 +6,7 @@ To install dependencies in Fedora:
 
 ```sh
 sudo dnf install ncurses-devel
+sudo dnf groupinstall "X Software Development"
 ```
 
 To install dependencies in Ubuntu:
