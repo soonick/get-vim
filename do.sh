@@ -131,6 +131,10 @@ set switchbuf+=usetab,newtab
 imap <S-Tab> <Esc><<i
 nmap <S-tab> <<
 
+" Visual mode tab/untab identation "
+vmap <S-Tab> <gv
+vmap <Tab> >gv
+
 " Remove trailing spaces when saving a file (except for md files) "
 fun! StripTrailingWhiteSpace()
   if &ft =~ 'markdown'
