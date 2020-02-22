@@ -12,11 +12,24 @@ else
   location="$location/vim"
 fi
 
+if [ -n "$(command -v dnf)" ]; then
+  sudo dnf install ncurses-devel python-devel python3-devel -y
+  sudo dnf groupinstall "X Software Development" -y
+fi
+
+if [ -n "$(command -v apt-get)" ]; then
+  sudo apt-get install build-essential libncurses-dev libncurses5-dev \
+      libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
+      libcairo2-dev libx11-dev libxpm-dev libxt-dev curl default-jre \
+      python-dev python3-dev -y
+fi
+
 git clone https://github.com/vim/vim.git $location
 cd "$location/src"
 
 ./configure \
     --enable-pythoninterp \
+    --enable-python3interp \
     --enable-cscope \
     --with-features=huge \
     --with-x
