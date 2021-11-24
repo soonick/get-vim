@@ -181,6 +181,9 @@ let g:ctrlp_show_hidden = 1
 " Use directory where vim was started as search directory "
 let g:ctrlp_working_path_mode = 'a'
 
+" ctrlp ignores some folders "
+let g:ctrlp_custom_ignore = '_site\|node_modules\|\.next\|\.git\/'
+
 " F2 toggles paste mode one and off "
 set pastetoggle=<F2>
 
@@ -239,6 +242,9 @@ au FileType go nmap <leader>dt <Plug>(go-def-tab)
 
 " <Ctrl-j> Pretty formats curent buffer as JSON "
 nnoremap  <C-j> :%!python -m json.tool<CR>
+
+" Grepfrut always ignores these folders "
+let g:grepfrut_global_exclude = '.*(node_modules|\.next|\.git).*'
 
 " Customize the statusline "
 set laststatus=2
