@@ -244,7 +244,7 @@ au FileType go nmap <leader>dt <Plug>(go-def-tab)
 nnoremap  <C-j> :%!python -m json.tool<CR>
 
 " Grepfrut always ignores these folders "
-let g:grepfrut_global_exclude = '.*(node_modules|\.next|\.git).*'
+let g:grepfrut_global_exclude = '.*(node_modules|\.next|\.git|\.jekyll-cache|\.sass-cache).*'
 
 " Customize the statusline "
 set laststatus=2
