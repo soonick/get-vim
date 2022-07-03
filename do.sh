@@ -129,6 +129,10 @@ hi Directory guifg=#FF0000 ctermfg=68
 highlight Comment ctermfg=97
 highlight Search ctermfg=0 ctermbg=2
 
+" Needed for tmux: "
+" https://unix.stackexchange.com/questions/348771/why-do-vim-colors-look-different-inside-and-outside-of-tmux "
+set background=dark
+
 " Allows normal mode to autocomplete paths using tab like bash does "
 set wildmenu
 set wildmode=list:longest
