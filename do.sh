@@ -58,7 +58,7 @@ mkdir -p ~/.vim/pack/my-plugins/start
 cd ~/.vim/pack/my-plugins/start
 git clone https://github.com/dpelle/vim-LanguageTool.git
 git clone https://github.com/scrooloose/nerdtree.git
-git clone https://github.com/jistr/vim-nerdtree-tabs.git
+git clone https://github.com/soonick/vim-nerdtree-tabs
 git clone https://github.com/scrooloose/syntastic.git
 git clone https://github.com/fatih/vim-go.git
 git clone https://github.com/ctrlpvim/ctrlp.vim.git
