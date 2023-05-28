@@ -28,7 +28,7 @@ git clone https://github.com/neovim/neovim $location
 cd "$location"
 git checkout stable
 
-if ! make; then
+if ! make --version; then
   echo ""
   echo ""
   echo "Couldn't compile vim. Make sure you have the necessary build tools"
