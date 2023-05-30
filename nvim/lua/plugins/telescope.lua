@@ -7,7 +7,7 @@ return {
   },
   config = function()
     local telescope = require('telescope')
-    local actions = require("telescope.actions")
+    local actions = require('telescope.actions')
     local builtin = require('telescope.builtin')
 
     -- Open files in new tab or focus on the tab if already open
@@ -16,9 +16,12 @@ return {
         mappings = {
           i = {
             ['<CR>'] = function(bufnr)
-              require("telescope.actions.set").edit(bufnr, "tab drop")
+              require('telescope.actions.set').edit(bufnr, 'tab drop')
             end,
           }
+        },
+        file_ignore_patterns = {
+          'node_modules'
         }
       }
     })
@@ -29,8 +32,8 @@ return {
 
     -- Grep for word under cursor
     local function grep_word_under_cursor()
-      local query = vim.fn.expand("<cword>")
-      if query ~= "" then
+      local query = vim.fn.expand('<cword>')
+      if query ~= '' then
         builtin.grep_string({
           search = query,
         })
@@ -38,6 +41,6 @@ return {
     end
 
     -- Map a key to trigger grep for word under cursor
-    vim.keymap.set('n', "<leader>g", grep_word_under_cursor, { noremap = true, silent = true })
+    vim.keymap.set('n', '<leader>g', grep_word_under_cursor, { noremap = true, silent = true })
   end
 }
