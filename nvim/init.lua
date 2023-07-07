@@ -1,6 +1,9 @@
 -- Set leader key to ;
 vim.g.mapleader = ';'
 
+-- Don't use swap files
+vim.opt.swapfile = false
+
 --- No incremental search (only show search results after clicking enter)
 vim.opt.incsearch = false;
 
