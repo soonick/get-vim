@@ -1,5 +1,16 @@
-local function open_nvim_tree()
-  require('nvim-tree.api').tree.open()
+local function open_nvim_tree(data)
+  -- buffer is a real file on the disk
+  local real_file = vim.fn.filereadable(data.file) == 1
+
+  -- buffer is a [No Name]
+  local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
+
+  if not real_file and not no_name then
+    return
+  end
+
+  -- open the tree, find the file but don't focus it
+  require("nvim-tree.api").tree.toggle({ focus = false, find_file = true, })
 end
 
 vim.api.nvim_create_autocmd({ 'VimEnter' }, { callback = open_nvim_tree })
@@ -81,7 +92,7 @@ return {
         local swap_then_open_tab = function()
           local node = api.tree.get_node_under_cursor()
           if node.type == 'file' then
-            -- Swith to right buffer
+            -- Switch to right buffer
             vim.cmd('wincmd l')
           end
           api.node.open.tab_drop(node)
