@@ -102,6 +102,9 @@ vim.opt.number = true
 -- Highlight column 81
 vim.opt.colorcolumn = '81'
 
+-- Change spellcheck highlight to be easier to read
+vim.api.nvim_set_hl(0, "SpellBad", {underdotted=true, bold=true, fg="#ff0000", ctermfg="red"})
+
 -- Search case insensitive if term is all lowercase
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
