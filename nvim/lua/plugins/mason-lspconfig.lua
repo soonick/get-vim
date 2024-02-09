@@ -13,6 +13,7 @@ return {
         'graphql',
         'jdtls',
         'lua_ls',
+        'rust_analyzer'
       }
     })
   end
