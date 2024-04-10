@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'F', '<cmd>lua vim.lsp.buf.format()<cr>', {buffer = event.buf})
 
     -- Rename symbol
-    vim.keymap.set('n', '3', '<cmd>lua vim.lsp.buf.rename()<cr>', {buffer = event.buf})
+    vim.keymap.set('n', '3r', '<cmd>lua vim.lsp.buf.rename()<cr>', {buffer = event.buf})
   end
 })
 
