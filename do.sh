@@ -40,4 +40,4 @@ make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 
 cd $current_folder
-cp -r ./nvim $HOME/.config/
+cp -r ./nvim $HOME/.config/nvim
