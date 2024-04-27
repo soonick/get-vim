@@ -4,6 +4,14 @@ echo "Where do you want to install vim?"
 echo "If the directory doesn't exist, vim will be installed in the given directory"
 read location
 
+# This makes this script work when the command is run by root (which is
+# common when running inside a docker container)
+sudo ()
+{
+    [[ $EUID = 0 ]] || set -- command sudo "$@"
+    "$@"
+}
+
 # Get it
 if [ ! -d "$location" ]; then
   mkdir -p $location
