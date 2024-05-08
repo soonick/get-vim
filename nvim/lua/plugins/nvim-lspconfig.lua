@@ -32,6 +32,7 @@ return {
   config = function()
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+    require('lspconfig').clangd.setup {}
     require('lspconfig').arduino_language_server.setup {}
     require('lspconfig').gopls.setup {}
     require('lspconfig').graphql.setup {}
