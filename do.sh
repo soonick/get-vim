@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 echo "Where do you want to install vim?"
 echo "If the directory doesn't exist, vim will be installed in the given directory"
 read location
