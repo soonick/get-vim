@@ -34,10 +34,8 @@ if [ -n "$(command -v apt-get)" ]; then
 fi
 
 current_folder=$(pwd)
-git clone https://github.com/neovim/neovim $location
+git clone --depth=1 -b stable https://github.com/neovim/neovim $location
 cd "$location"
-git checkout stable
-
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 
