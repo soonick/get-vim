@@ -50,5 +50,6 @@ return {
       }
     }
     require('lspconfig').rust_analyzer.setup {}
+    require('lspconfig').svelte.setup {}
   end
 }
