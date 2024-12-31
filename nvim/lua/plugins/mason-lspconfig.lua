@@ -13,7 +13,8 @@ return {
         'graphql',
         'jdtls',
         'lua_ls',
-        'rust_analyzer'
+        'rust_analyzer',
+        'svelte'
       }
     })
   end
