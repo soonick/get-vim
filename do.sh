@@ -30,7 +30,8 @@ fi
 if [ -n "$(command -v apt-get)" ]; then
   sudo apt-get install build-essential libncurses-dev libncurses5-dev npm golang \
       libgtk2.0-dev libatk1.0-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev \
-      curl default-jre ninja-build gettext make cmake unzip python3-dev ripgrep -y
+      curl default-jre ninja-build gettext make cmake unzip python3-dev ripgrep \
+      xclip -y
 fi
 
 current_folder=$(pwd)
