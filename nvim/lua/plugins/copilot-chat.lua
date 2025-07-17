@@ -1,11 +1,13 @@
 return {
   'CopilotC-Nvim/CopilotChat.nvim',
   dependencies = {
-    { 'github/copilot.vim' }, -- required for autocompletion
-    { 'nvim-lua/plenary.nvim' }, -- required by CopilotChat
+    { 'github/copilot.vim' },
+    { 'nvim-lua/plenary.nvim' },
   },
   opts = {
-    -- You can customize prompts, UI behavior, etc.
+    window = {
+      layout = 'float',
+    },
   },
   cmd = {
     'CopilotChat', 'CopilotChatOpen', 'CopilotChatClose', 'CopilotChatToggle'
