@@ -69,6 +69,11 @@ vim.api.nvim_set_keymap('n', '<S-Tab>', '<<', {})
 vim.api.nvim_set_keymap('v', '<S-Tab>', '<gv', {})
 vim.api.nvim_set_keymap('v', '<Tab>', '>gv', {})
 
+-- Show all diagnostics for current line in pop up
+vim.api.nvim_set_keymap( 'n', '<Leader>do', ':lua vim.diagnostic.open_float()<CR>', {})
+vim.api.nvim_set_keymap( 'n', '<Leader>dn', ':lua vim.diagnostic.goto_next()<CR>', {})
+vim.api.nvim_set_keymap( 'n', '<Leader>dp', ':lua vim.diagnostic.goto_prev()<CR>', {})
+
 -- Replace tabs with spaces
 vim.opt.expandtab = true
 vim.opt.smarttab = true
