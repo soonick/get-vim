@@ -32,12 +32,17 @@ return {
   config = function()
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-    require('lspconfig').clangd.setup {}
-    require('lspconfig').arduino_language_server.setup {}
-    require('lspconfig').gopls.setup {}
-    require('lspconfig').graphql.setup {}
-    require('lspconfig').jdtls.setup {}
-    require('lspconfig').lua_ls.setup {
+    vim.lsp.config('clangd', {})
+    vim.lsp.enable({"clangd"})
+    vim.lsp.config('arduino_language_server', {})
+    vim.lsp.enable({"arduino_language_server"})
+    vim.lsp.config('gopls', {})
+    vim.lsp.enable({"gopls"})
+    vim.lsp.config('graphql', {})
+    vim.lsp.enable({"graphql"})
+    vim.lsp.config('jdtls', {})
+    vim.lsp.enable({"jdtls"})
+    vim.lsp.config('lua_ls', {
       capabilities = capabilities,
       settings = {
         Lua = {
@@ -48,8 +53,11 @@ return {
           }
         }
       }
-    }
-    require('lspconfig').rust_analyzer.setup {}
-    require('lspconfig').svelte.setup {}
+    })
+    vim.lsp.enable({"lua_ls"})
+    vim.lsp.config('rust_analyzer', {})
+    vim.lsp.enable({"rust_analyzer"})
+    vim.lsp.config('svelte', {})
+    vim.lsp.enable({"svelte"})
   end
 }
