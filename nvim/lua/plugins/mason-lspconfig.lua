@@ -14,7 +14,8 @@ return {
         'jdtls',
         'lua_ls',
         'rust_analyzer',
-        'svelte'
+        'svelte',
+        'ts_ls'
       }
     })
   end

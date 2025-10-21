@@ -28,20 +28,20 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 return {
-  "neovim/nvim-lspconfig",
+  'neovim/nvim-lspconfig',
   config = function()
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
     vim.lsp.config('clangd', {})
-    vim.lsp.enable({"clangd"})
+    vim.lsp.enable({'clangd'})
     vim.lsp.config('arduino_language_server', {})
-    vim.lsp.enable({"arduino_language_server"})
+    vim.lsp.enable({'arduino_language_server'})
     vim.lsp.config('gopls', {})
-    vim.lsp.enable({"gopls"})
+    vim.lsp.enable({'gopls'})
     vim.lsp.config('graphql', {})
-    vim.lsp.enable({"graphql"})
+    vim.lsp.enable({'graphql'})
     vim.lsp.config('jdtls', {})
-    vim.lsp.enable({"jdtls"})
+    vim.lsp.enable({'jdtls'})
     vim.lsp.config('lua_ls', {
       capabilities = capabilities,
       settings = {
@@ -54,10 +54,12 @@ return {
         }
       }
     })
-    vim.lsp.enable({"lua_ls"})
+    vim.lsp.enable({'lua_ls'})
     vim.lsp.config('rust_analyzer', {})
-    vim.lsp.enable({"rust_analyzer"})
+    vim.lsp.enable({'rust_analyzer'})
     vim.lsp.config('svelte', {})
-    vim.lsp.enable({"svelte"})
+    vim.lsp.enable({'svelte'})
+    vim.lsp.config('ts_ls', {})
+    vim.lsp.enable({'ts_ls'})
   end
 }
