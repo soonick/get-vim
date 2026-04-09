@@ -54,18 +54,18 @@ return {
           end,
         })
 
-        -- Closes nvim-tree if it's the last open buffer
-        vim.o.confirm = true
-        vim.api.nvim_create_autocmd('BufEnter', {
-          group = vim.api.nvim_create_augroup('NvimTreeClose', {clear = true}),
+        vim.api.nvim_create_autocmd('WinClosed', {
           callback = function()
-            local layout = vim.api.nvim_call_function('winlayout', {})
-            if layout[1] == 'leaf' and
-                vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(layout[2]), 'filetype') == 'NvimTree'
-                and layout[3] == nil then
-              vim.cmd('quit')
-            end
-          end
+            vim.defer_fn(function()
+              local wins = vim.api.nvim_tabpage_list_wins(0)
+              if #wins == 1 then
+                local buf = vim.api.nvim_win_get_buf(wins[1])
+                if vim.bo[buf].filetype == 'NvimTree' then
+                  vim.cmd('quit')
+                end
+              end
+            end, 10)
+          end,
         })
 
         -- Open file in new tab or focus existing buffer if it already exists
