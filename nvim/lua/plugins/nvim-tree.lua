@@ -1,4 +1,4 @@
-local function open_nvim_tree(data)
+local function open_nvim_tree()
   require("nvim-tree.api").tree.open()
 end
 
@@ -24,40 +24,34 @@ return {
           return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
         end
 
-        local function file_exists(name)
-          local f = io.open(name, 'r')
-          if f ~= nil then
-            io.close(f)
-            return true
-          else
-            return false
-          end
-        end
-
         -- This part removes f and F mappings which conflict with telescope
         api.config.mappings.default_on_attach(bufnr)
         vim.keymap.del('n', 'f', { buffer = bufnr })
         vim.keymap.del('n', 'F', { buffer = bufnr })
 
         -- Opens nvim-tree when a new tab is created
-        local openTreeGrp = vim.api.nvim_create_augroup('AutoOpenTree', { clear = true })
-        vim.api.nvim_create_autocmd('TabNew', {
-          callback = function(ev)
-            if ev.file ~= '' and file_exists(ev.match) then
-              api.tree.open({
-                path = ev.match
-              })
-            else
-              if ev.file == '' then
-                -- I still don't know how to make a tab with no name open with
-                -- nvim tree, so for now we just open it alone
-              else
-                vim.cmd('wincmd l')
-                api.tree.open()
+        vim.api.nvim_create_autocmd('WinNew', {
+          callback = function()
+            vim.defer_fn(function()
+              local has_tree = false
+              for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+                if vim.bo[vim.api.nvim_win_get_buf(win)].filetype == 'NvimTree' then
+                  has_tree = true
+                  break
+                end
               end
-            end
+              if not has_tree then
+                require('nvim-tree.api').tree.open()
+                -- Switch focus to the other window
+                for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+                  if win ~= vim.api.nvim_get_current_win() then
+                    vim.api.nvim_set_current_win(win)
+                    break
+                  end
+                end
+              end
+            end, 10)
           end,
-          group = openTreeGrp,
         })
 
         -- Closes nvim-tree if it's the last open buffer
